@@ -1,7 +1,5 @@
 <?php
 session_start();
-include("database.php");
-extract($_POST);
 ?>
 <!DOCTYPE html>
 <html>
@@ -38,7 +36,7 @@ extract($_POST);
 	      </li>
 	    </ul>
 	    <form class="form-inline my-2 my-lg-0" method="GET" action="signout.php">
-	    	<a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true"><?php echo $_SESSION["rollnumber"];?></a>
+	    	<a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true"><?php echo $_SESSION['firstname']." ".$_SESSION['lastname'];?></a>
 			<button class="btn btn-danger" type="submit">Sign Out</button></a>
 	    </form>
 	  </div>

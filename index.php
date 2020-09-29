@@ -18,13 +18,17 @@ session_start();
   if(isset($submit))
   {
     $rs=mysqli_query($connection,"SELECT * FROM users WHERE `rollnumber`='$rollnumber' AND `password`='$password'");
-    if(mysqli_num_rows($rs)<1)
+    $row=mysqli_fetch_array($rs);
+    if(is_array($row))
     {
-      $found="N";
+      $_SESSION['rollnumber']=$row['rollnumber'];
+      $_SESSION['firstname']=$row['firstname'];
+      $_SESSION['lastname']=$row['lastname'];
     }
     else
     {
-      $_SESSION['rollnumber']=$rollnumber;
+      $found="N";
+
     }
   }
   if(isset($_SESSION['rollnumber']))
