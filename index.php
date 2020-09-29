@@ -29,9 +29,9 @@ session_start();
   }
   if(isset($_SESSION['rollnumber']))
   {
-    echo "Welcome";
-    echo '<a href="signout.php">Sign Out</a>';    
-
+    
+    header("Location: welcome.php");   
+    
     exit;
   }
   ?>

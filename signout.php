@@ -1,5 +1,6 @@
 <?php
 session_start();
-session_destroy();
-header("Location: index.php");
+unset($_SESSION["rollnumber"]);
+unset($_SESSION["password"]);
+header("Location:index.php");
 ?>
